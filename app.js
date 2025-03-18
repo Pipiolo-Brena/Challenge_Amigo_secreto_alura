@@ -5,9 +5,11 @@ let amigoSecreto;
 function agregarAmigo(){
     let amigoAñadido = (document.getElementById('amigo').value);
     if(amigoAñadido!=""){
-        nombresAmigos.push(amigoAñadido);
-        verAmigoNuevo();
-        limpiarCaja();
+        if(isNaN(amigoAñadido)){
+            nombresAmigos.push(amigoAñadido);
+            verAmigoNuevo();
+            limpiarCaja();
+        }else alert("No se permiten numeros, ingresar un nombre.");
     }else{
         alert("Por favor, inserte un nombre.");
     }
