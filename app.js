@@ -6,18 +6,21 @@ function agregarAmigo(){
     let amigoAñadido = (document.getElementById('amigo').value);
     if(amigoAñadido!=""){
         nombresAmigos.push(amigoAñadido);
-        verAmigoNuevo(amigoAñadido);
+        verAmigoNuevo();
         limpiarCaja();
     }else{
-        alert("Ingresa algun nombre valido");
+        alert("Por favor, inserte un nombre.");
     }
 }
 
-function verAmigoNuevo(amigoAñadido){
+function verAmigoNuevo(){
     let lista=document.querySelector("#listaAmigos");
-    let nuevoElemento=document.createElement("li");
-    nuevoElemento.textContent=amigoAñadido;
-    lista.appendChild(nuevoElemento);
+    lista.innerHTML = ""
+    for(let x of nombresAmigos){
+        let nuevoElemento=document.createElement("li");
+        nuevoElemento.textContent=x;
+        lista.appendChild(nuevoElemento);
+    }
 }
 
 function limpiarCaja() {
