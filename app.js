@@ -6,11 +6,18 @@ function agregarAmigo(){
     let amigoAñadido = (document.getElementById('amigo').value);
     if(amigoAñadido!=""){
         nombresAmigos.push(amigoAñadido);
-        verAmigoNuevo();
+        verAmigoNuevo(amigoAñadido);
         limpiarCaja();
     }else{
         alert("Ingresa algun nombre valido");
     }
+}
+
+function verAmigoNuevo(amigoAñadido){
+    let lista=document.querySelector("#listaAmigos");
+    let nuevoElemento=document.createElement("li");
+    nuevoElemento.textContent=amigoAñadido;
+    lista.appendChild(nuevoElemento);
 }
 
 function limpiarCaja() {
