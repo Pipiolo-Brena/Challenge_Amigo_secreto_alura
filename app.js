@@ -4,9 +4,13 @@ let ganador;
 
 function agregarAmigo(){
     let amigoAñadido = (document.getElementById('amigo').value);
-    nombresAmigos.push(amigoAñadido);
-    verAmigoNuevo();
-    limpiarCaja();
+    if(amigoAñadido!=""){
+        nombresAmigos.push(amigoAñadido);
+        verAmigoNuevo();
+        limpiarCaja();
+    }else{
+        alert("Ingresa algun nombre valido");
+    }
 }
 
 function limpiarCaja() {
