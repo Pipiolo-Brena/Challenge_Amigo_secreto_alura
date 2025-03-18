@@ -30,19 +30,14 @@ function sortearAmigo(){
         let numeroAzar=Math.floor(Math.random()*nombresAmigos.length);
         amigoSecreto= nombresAmigos[numeroAzar];
 
-        //Quitamos la lista de amigos
-        let listaAmgios=document.querySelector("#listaAmigos");
-        listaAmgios.innerHTML = ""
+        //Quitamos la listas anteriores
+        estadoInicial();
 
         //Ponemos el ganador en pantalla
-        
         let listaResultado=document.querySelector("#resultado");
         let nuevoElemento=document.createElement("li");
         nuevoElemento.textContent=`El amigo sorteado es: ${amigoSecreto}`;
         listaResultado.appendChild(nuevoElemento);
-
-        //Vaciamos la lista de amigos
-        nombresAmigos=[];
     }else{
         alert("Amigos insuficientes para el sorteo, añadir más amigos.");
     }
@@ -50,4 +45,11 @@ function sortearAmigo(){
 
 function limpiarCaja() {
     document.querySelector('#amigo').value = '';
+}
+
+function estadoInicial(){
+    let listaAmgios=document.querySelector("#listaAmigos");
+    listaAmgios.innerHTML = ""
+    let listaResultado=document.querySelector("#resultado");
+    listaResultado.innerHTML = ""
 }
