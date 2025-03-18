@@ -6,6 +6,7 @@ function agregarAmigo(){
     let amigoAñadido = (document.getElementById('amigo').value);
     if(amigoAñadido!=""){
         if(isNaN(amigoAñadido)){
+            estadoInicial();
             nombresAmigos.push(amigoAñadido);
             verAmigoNuevo();
             limpiarCaja();
